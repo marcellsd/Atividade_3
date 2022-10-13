@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark btn-dark">
+      <div class="container">
+          <div class="col-12 col-md-12 text-center"> Pesquisa por Tabela FIPE </div>
+      </div>
+    </nav>
+    <div class="container mt-4">
+      <form >
+        <select  class="custom-select-sm bg-dark btn-dark text-light light col-4 col-md-4" id="seletorMarca" onchange="habilitarSeletorModelo(this.value)">
+          <option selected>Selecione a marca</option>
+        </select>
+     
+        <select  class="custom-select-sm bg-dark btn-dark text-light col-4 col-md-4" id="seletorModelo" onchange="habilitarSeletorAno(this.value)">
+          <option selected>Selecione o modelo</option>
+        </select>
+  
+        <select class="custom-select-sm bg-dark btn-dark text-light col-3 col-md-3" id="seletorAno" onchange="mostrarPreco(this.value)">
+          <option selected>Selecione o ano</option>
+        </select>
+      </form>
+    </div>
+    <div class="container mt-4">
+      <div class="col-12 col-md-12">
+        <table class="table table-dark text-center" hidden="true" id="tabela">
+          <thead>
+            <tr>
+              <th  colspan="2">Dados do Carro</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Valor</th>
+              <td id="valorTabela">-</td>
+            </tr>
+            <tr>
+              <th>Marca</th>
+              <td id="marcaTabela">-</td>
+            </tr>
+            <tr>
+              <th>Modelo</th>
+              <td id="modeloTabela">-</td>
+            </tr>
+            <tr>
+              <th>Ano</th>
+              <td id="anoTabela">-</td>
+            </tr>
+            <tr>
+              <th>Combustível</th>
+              <td id="combustivelTabela">-</td>
+            </tr>
+            <tr>
+              <th>Mês de Referência</th>
+              <td id="mesReferenciaTabela">-</td>
+            </tr>
+            <tr>
+              <th>Código FIPE</th>
+              <td id="codigoFipeTabela">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="container">
+      <Button class=" bg-dark btn-dark btn-sm col-3 col-md-3 mt-4" hidden="true" id="botaoFavoritos" onclick="favoritarBusca()">Salvar nos Favoritos</Button>
+      <Button class=" bg-dark btn-dark btn-sm col-3 col-md-3 mt-4" id="botaoGrafico" onclick="mostrarGrafico()">Mostrar Gráfico dos Mais Acessados</Button>
+    </div>  
+    <div class="container">
+      <ol id="listaFavoritos" class=" btn-dark bg-dark col-5 col-md-5 mt-4">Buscas Favoritas:</ol>
+    </div>
+    <div class="container">
+      <div class="col-12 col-md-12 mt-5" style="height:350px; width: 600px;" id="grafico"></div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <script src="FIPE.js"></script>
+
+    <!-- Google Charts -->
+    <script type="text/javascript" src="http://www.gstatic.com/charts/loader.js"></script>
+
+  </body>
+</html>
